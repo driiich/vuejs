@@ -1,27 +1,39 @@
 <template>
-  <div id="app">
-    <todos></todos>
+  <div>
+    <todos v-model="todos"></todos>
   </div>
 </template>
 
 <script>
-import Todos from './components/Todos.vue'
+    import Todos from './components/Todos'
 
-export default {
-  name: 'app',
-  components: {
-    Todos
-  }
-}
+    export default {
+        data () {
+            return {
+                slides: 5,
+                todos: [{
+                    name: 'Demo',
+                    completed: true
+                }]
+            }
+        },
+        methods: {
+            addTodo () {
+                this.todos.push({
+                    name: 'Jean',
+                    completed: false
+                })
+            },
+            addSlide () {
+                this.slides++
+            },
+            removeSlide () {
+                this.slides--
+            }
+        },
+        components: {
+            Todos
+        }
+    }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
