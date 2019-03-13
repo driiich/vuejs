@@ -7,7 +7,6 @@
         <img :src="'https://picsum.photos/150/150/?image=' + n">
       </a>
     </div>
-test
     <div class="ui segment buttons">
       <button class="ui button green" @click="title = 'normal'">Normal</button>
       <div class="or"></div>
